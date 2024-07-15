@@ -1,58 +1,62 @@
-import pandas as pd
+from rdkit import Chem
+from rdkit.Chem import Draw
+from molbloom import buy
+#from smallworld_api import SmallWorld
 import streamlit as st
 from aizynthfinder.interfaces import AiZynthApp
 
 st.title("AiSynth")
 user_input_smiles = st.text_input("SMILES", "")
-# TODO: Implement visualisation of SMILES
+
+#TODO: add an error message for edge cases
+if user_input_smiles != "":
+    rdkit_molecule = Chem.MolFromSmiles(user_input_smiles)
+    Draw.MolToFile(rdkit_molecule, "images/rdkit_molecule.png")
+    st.image("images/rdkit_molecule.png")
+
 
 user_input_stocks = st.selectbox(
     "Stocks",
     ("", "zinc"))
 
+#if buy(user_input_smiles) is False:
+
 user_input_exp_pol = st.selectbox(
     "Expansion Policy",
     ("uspto", "ringbreaker"))
 
-min_time = st.slider("**Time**(minimum)", 0, 100)
+user_input_Filter_Policy = st.selectbox(
+    "Filter Policy",
+    ("uspto", ""))
 
-@st.cache_data
-def get_UN_data():
-    AWS_BUCKET_URL = "https://streamlit-demo-data.s3-us-west-2.amazonaws.com"
-    df = pd.read_csv(AWS_BUCKET_URL + "/agri.csv.gz")
-    return df.set_index("Region")
+#time_to_search = st.slider("**Time**(minutes)", 1, 120)
 
-try:
-    df = get_UN_data()
-    countries = st.multiselect(
-        "Choose countries", list(df.index), ["China", "United States of America"]
-    )
-    if not countries:
-        st.error("Please select at least one country.")
-    else:
-        data = df.loc[countries]
-        data /= 1000000.0
-        st.write("### Gross Agricultural Production ($B)", data.sort_index())
+#max_iterations = st.slider("Max Iterations", 1, 100)
 
-        data = data.T.reset_index()
-        data = pd.melt(data, id_vars=["index"]).rename(
-            columns={"index": "year", "value": "Gross Agricultural Product ($B)"}
-        )
-        chart = (
-            alt.Chart(data)
-            .mark_area(opacity=0.3)
-            .encode(
-                x="year:T",
-                y=alt.Y("Gross Agricultural Product ($B):Q", stack=None),
-                color="Region:N",
-            )
-        )
-        st.altair_chart(chart, use_container_width=True)
-except URLError as e:
-    st.error(
-        """
-        **This demo requires internet access.**
-        Connection error: %s
-    """
-        % e.reason
-    )
+returns_first_solved_route = st.checkbox("display first solved route")
+
+max_tree_depth = st.text_input("max tree depth")
+
+atom_occurences = {}
+st.write('**Limit atom occurences**')
+carbon = st.checkbox("Carbon")
+carbon_occurences = st.text_input('', value='0', key='carbon_occurences')
+oxygen = st.checkbox("Oxygen")
+oxygen_occurences = st.text_input('', value='0', key='oxygen_occurences')
+nitrogen = st.checkbox("Nitrogen")
+nitrogen_occurences = st.text_input('', value='0', key='nitrogen_occurences')
+
+if carbon:
+    atom_occurences['Carbons'] = carbon_occurences
+if oxygen:
+    atom_occurences['Oxygens'] = oxygen_occurences
+if nitrogen:
+    atom_occurences['Nitrogens'] = nitrogen_occurences
+
+st.write('You have selected:')
+for element, occurence in atom_occurences.items():
+    st.write(f'{occurence} {element}')
+
+search_button = st.button("Run Search", type = "secondary")
+if search_button:
+    pass
