@@ -1,0 +1,11 @@
+expansion:
+  uspto:
+    - /home/chembiologystp/aizynthfinder/uspto_model.onnx
+    - /home/chembiologystp/aizynthfinder/uspto_templates.csv.gz
+  ringbreaker:
+    - /home/chembiologystp/aizynthfinder/uspto_ringbreaker_model.onnx
+    - /home/chembiologystp/aizynthfinder/uspto_ringbreaker_templates.csv.gz     
+filter:
+  uspto: /home/chembiologystp/aizynthfinder/uspto_filter_model.onnx
+stock:
+  zinc: /home/chembiologystp/aizynthfinder/zinc_stock.hdf5
