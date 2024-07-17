@@ -60,4 +60,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     all_results = get_required_metadata(args.input)
-    print(all_results)
+    print(*all_results, sep='\n]')
