@@ -65,6 +65,10 @@ if user_input_smiles != '' and user_input_stocks is True and len(user_input_exp_
         os.system(command_to_run)
 
     #TODO: Implement a spinner
+    
+    #with st.spinner("waiting"):
+    #    response = call_streamlit('./trees.json', )
+    
     while os.path.exists('./trees.json') is False:
         st.spinner('Processing...')
         if os.path.exists('./trees.json'):
