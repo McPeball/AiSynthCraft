@@ -1,7 +1,6 @@
 import argparse
 import json
 
-
 def get_required_metadata(json_file):
     with open(json_file) as js:
         data = json.load(js)
