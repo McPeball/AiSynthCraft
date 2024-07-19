@@ -24,5 +24,3 @@ pip install greenlet
 
 ## install tensorflow
 pip install tensorflow
-
-x
