@@ -162,3 +162,5 @@ cython_debug/
 #.idea/
 
 images/rdkit_molecule.png
+output.json.gz
+smiles.txt
