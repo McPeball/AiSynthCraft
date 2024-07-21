@@ -42,36 +42,19 @@ cd data
 download_public_data .
 ```
 
-## 9. 
-
+## 9. Exit 'data' folder
 ```sh
-pip install -r requirements.txt
+cd ..
 ```
 
-# Usage
+## 10. Run the web app
 ```sh
-usage: main.py [-h] --fastq FASTQ --sdf SDF --excel_file EXCEL_FILE [--output OUTPUT]
-
-options:
-  -h, --help            show this help message and exit
-  --fastq FASTQ         (Required) E.g. 112_R2_001.fastq.gz
-  --sdf SDF             (Required) E.g. Crick_bb1_bb2_bb3.sdf
-  --excel_file EXCEL_FILE
-                        (Required) E.g. BBs_with_oligo_codes.xlsx
-  --output OUTPUT       (Optional) Default: data.csv
+streamlit run app_aisynth.py
 ```
 
-# Running
-Run
-
-```sh
-python main.py --fastq <filename>.fastq.gz --sdf <filename>.sdf --excel_file <filename>.xlsx
-```
 
 # IMPORTANT THINGS TO NOTE
-1. The FASTQ file is to be in the format of <filename>.fastq.gz.
-2. Each molecule in the SDF file contains a SMILES string.
-3. The code is written in a way that adapts to the "BBs_with_oligo_codes.xlsx" file. If an Excel file with different columns is used instead, the code will not work.
+1. Setting up this repository assumes that the user has Anaconda/Mamba installed on the computer.
 
 # Issues?
 Please open an issue in the repository. (See top left of the webpage, under "Issues".)
