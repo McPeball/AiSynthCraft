@@ -9,7 +9,7 @@ git clone git@github.com:McPeball/AiSynthCraft.git
 
 ## 2. Create the virtual environment with Conda
 ```sh
-conda create "python>=3.9,<3.11" -n aizynth-env
+conda create "python>=3.9,<3.11" -n aizynth-env -y
 ```
 
 ## 3. Activate the virtual environment
@@ -17,14 +17,14 @@ conda create "python>=3.9,<3.11" -n aizynth-env
 conda activate aizynth-env
 ```
 
-## 4. Install required Python libraries
-```sh
-pip install -r requirements.txt
-```
-
-## 5. Navigate to the AiSynthCraft folder
+## 4. Navigate to the AiSynthCraft folder
 ```sh
 cd AiSynthCraft
+```
+
+## 5. Install required Python libraries
+```sh
+pip install -r requirements.txt
 ```
 
 ## 6. Create a 'data' folder to contain the model files
