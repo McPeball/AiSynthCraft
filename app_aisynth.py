@@ -21,7 +21,7 @@ if "disabled" not in st.session_state:
     st.session_state.disabled = False
 
 check_images_folder = check_folder_exists("./images")
-if check_folder_exists is False:
+if check_images_folder is False:
     os.mkdir("./images")
 
 user_input_smiles = st.text_area("Enter SMILES", "")
