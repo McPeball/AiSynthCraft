@@ -27,31 +27,10 @@ cd AiSynthCraft
 pip install -r requirements.txt
 ```
 
-## 6. Create a 'data' folder to contain the model files
-```sh
-mkdir data
-```
-
-## 7. Navigate to the 'data' folder
-```sh
-cd data
-```
-
-## 8. Run 'download_public_data' to download the model files
-```sh
-download_public_data .
-```
-
-## 9. Exit 'data' folder
-```sh
-cd ..
-```
-
-## 10. Run the web app
+## 6. Run the web app
 ```sh
 streamlit run app_aisynth.py
 ```
-
 
 # IMPORTANT THINGS TO NOTE
 1. Setting up this repository assumes that the user has Anaconda/Mamba installed on the computer.
