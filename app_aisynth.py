@@ -8,6 +8,8 @@ from aizynthfinder.reactiontree import ReactionTree
 from rdkit import Chem
 from rdkit.Chem import Draw
 
+from tool_functions import check_folder_exists
+
 st.title("AiSynthCraft")
 
 
@@ -17,6 +19,10 @@ def disable():
 
 if "disabled" not in st.session_state:
     st.session_state.disabled = False
+
+check_images_folder = check_folder_exists("./images")
+if check_folder_exists is False:
+    os.mkdir("./images")
 
 user_input_smiles = st.text_area("Enter SMILES", "")
 
