@@ -1,4 +1,4 @@
-aizynthfinder[all]==4.3.0
-pandas==2.2.2
-rdkit==2024.3.3
-streamlit==1.36.0
+aizynthfinder[all]
+pandas
+rdkit
+streamlit
