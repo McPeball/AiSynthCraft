@@ -125,9 +125,9 @@ if (
             if "molecule" in file:
                 shutil.rmtree(file, ignore_errors=True)
 
-        os.system(command_to_run)
-
         with st.spinner("waiting"):
+            os.system(command_to_run)
+
             while os.path.exists("output.json.gz") is False:
                 continue
             if os.path.exists("output.json.gz"):
