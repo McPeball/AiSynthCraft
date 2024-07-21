@@ -111,7 +111,7 @@ if (
 ):
     user_input_stocks = "zinc"
     user_input_Filter_Policy = "uspto"
-    command_to_run = f"aizynthcli --config config.yml --smiles smiles.txt --policy {user_input_exp_pol} --filter {user_input_Filter_Policy} --stocks {user_input_stocks}"
+    command_to_run = f"aizynthcli --config data/config.yml --smiles smiles.txt --policy {user_input_exp_pol} --filter {user_input_Filter_Policy} --stocks {user_input_stocks}"
 
     if search_button:
 
