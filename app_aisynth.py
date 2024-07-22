@@ -82,6 +82,7 @@ if (
                 save_synthetic_routes()
                 st.success("Run completed. :)")
 
+    # Display results
     st.write("Best Synthetic Route for:")
     option = st.selectbox("Select molecule", all_smiles)
 
