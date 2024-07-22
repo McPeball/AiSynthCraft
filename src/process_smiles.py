@@ -15,6 +15,9 @@ def get_smiles_and_display_images(user_input_smiles):
                     for smiles in all_smiles:
                         smiles_file.write(f"{smiles}\n")
                     smiles_file.write("C")
+                img = Draw.MolToImage(rdkit_molecule)
+                img.save("images/rdkit_molecule.png")
+                st.image("images/rdkit_molecule.png")
         else:
             all_rdkit_molecules = []
             for smiles in all_smiles:
