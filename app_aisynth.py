@@ -79,8 +79,8 @@ if (
             while os.path.exists("output.json.gz") is False:
                 continue
             if os.path.exists("output.json.gz"):
-                st.success("Run completed. :)")
                 save_synthetic_routes()
+                st.success("Run completed. :)")
 
     st.write("Best Synthetic Route for:")
     option = st.selectbox("Select molecule", all_smiles)
