@@ -1,7 +1,7 @@
 import os
 
 import streamlit as st
-
+from tool_functions import check_file_or_folder_exists
 from src.checking_files_and_folders import (
     check_data,
     check_images,
@@ -87,7 +87,7 @@ if (
     option = st.selectbox("Select molecule", all_smiles)
 
     for key, value in smiles_indexes.items():
-        if value == option:
+        if value == option and check_file_or_folder_exists(f"molecule{int(key)}/route000.png"):
             st.image(f"molecule{int(key)}/route000.png")
 
     st.session_state.disabled = False
