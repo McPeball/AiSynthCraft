@@ -1,6 +1,9 @@
 # AiSynthCraft
 a web app which acts as a user interface to AiZynthFinder for chemists.
 
+# Prerequisites
+## 1. Setting up this repository requires anaconda to be installed on the users computer.
+
 # Installation
 ## 1. Clone the repository
 ```sh
@@ -31,9 +34,6 @@ pip install -r requirements.txt
 ```sh
 streamlit run app_aisynth.py
 ```
-
-# IMPORTANT THINGS TO NOTE
-1. Setting up this repository assumes that the user has Anaconda/Mamba installed on the computer.
 
 # Issues?
 Please open an issue in the repository. (See top left of the webpage, under "Issues".)
