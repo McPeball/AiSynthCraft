@@ -5,7 +5,7 @@ a web app which acts as a user interface to AiZynthFinder for chemists.
 Before you start, ensure you have met the following requirements:
 * You have linux os or a subsystem for linux installed such as wsl.
 * You have installed anaconda/mamba.
-A guide on how to install anaconda can be found here: [anaconda](https://www.anaconda.com/)
+A guide on how to install anaconda can be found [here](https://www.anaconda.com/)
 
 ## Installation
 ### 1. Clone the repository
