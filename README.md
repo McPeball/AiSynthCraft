@@ -2,7 +2,7 @@
 a web app which acts as a user interface to AiZynthFinder for chemists.
 
 # Prerequisites
-## 1. Setting up this repository requires anaconda to be installed on the users computer.
+Setting up this repository requires anaconda to be installed on the users computer.
 
 # Installation
 ## 1. Clone the repository
